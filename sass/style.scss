@@ -1,0 +1,93 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300i,400');
+
+$column-font: "Kaushan Script";
+$button-font: "Roboto";
+$card-font: "Roboto";
+$headers-color: #fff;
+$button-color: #fff;
+$button-font-color: #8e44ad;
+* {
+	//border: 1px solid black;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+.buttons {
+	font-family: $button-font;
+	background-color: $button-color;
+	color: $button-font-color;
+	font-weight: 700;
+	border: none;
+	cursor: pointer;
+}
+.board {
+	background-color: #3498db;
+}
+h1 {
+	margin: 0;
+	padding: 30px 0;
+	text-align: center;
+	font-family: "Montserrat";
+	color: $headers-color;
+}
+h2 {
+	font-family: $column-font;
+	color: $headers-color;
+	border-bottom: 1px solid #fff;
+	padding: 5px 0;
+}
+.main-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.create-column {
+		@extend .buttons;
+		padding: 10px;
+		font-weight: 700;
+		font-size: 20px;
+	}
+}
+.column-container {
+	padding-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	.column {
+		flex: 33%;
+		border: 2px solid #fff;
+		padding: 0 20px;
+		button {
+			@extend .buttons;
+			padding: 5px;
+		}
+		.btn-delete {
+			border: none;
+			color: $button-color;
+			background: transparent;
+			position: relative;
+			float: right;
+			bottom: 55px;
+			padding: 5px 15px;
+		}
+		.column-card-list {
+			list-style: none;
+			padding: 0;
+			.card {
+				border: 2px solid #8e44ad;
+				margin: 10px 0;
+				background-color: #fff;
+			}
+			.card-btn-delete {
+				float: right;
+				padding: 0 10px;
+			}
+			p {
+				font-family: $card-font;
+			}
+		}
+	}
+}
